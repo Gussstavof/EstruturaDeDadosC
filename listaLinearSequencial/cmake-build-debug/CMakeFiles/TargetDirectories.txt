@@ -1,0 +1,3 @@
+C:/Users/Desktop/CLionProjects/estruturaDeDados/listaLinearSequencial/cmake-build-debug/CMakeFiles/listaLinearSequencial.dir
+C:/Users/Desktop/CLionProjects/estruturaDeDados/listaLinearSequencial/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Desktop/CLionProjects/estruturaDeDados/listaLinearSequencial/cmake-build-debug/CMakeFiles/rebuild_cache.dir
