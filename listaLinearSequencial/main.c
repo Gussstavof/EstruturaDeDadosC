@@ -44,15 +44,17 @@ int searchElement(List* list, TYPEKEY key){
     return i;
 }
 
-bool addElement(List* list, Registry registry, int i){
-    int x;
-    if((list->elementNumber == 10) || (i < 0) || (i > list->elementNumber)){
+bool addElement(List* list, Registry registry){
+    if(list->elementNumber >= 10){
         return false;
     }
-    for (x = list->elementNumber; x > i; --x) {
-        list->A[x] = list->A[x-1];
+
+    int position = list->elementNumber;
+    while (position > 0 && list->A[position-1].key > registry.key){
+        list->A[position] = list->A[position-1];
+        position--;
     }
-    list->A[i] = registry;
+    list->A[position] = registry;
     list->elementNumber++;
     return true;
 }
@@ -79,13 +81,16 @@ int main(){
     Registry registry1;
     registry1.key = 1;
     initList(list);
-    addElement(list, registry1, 0);
+    addElement(list, registry1);
     showList(list);
     registry1.key = 5;
-    addElement(list, registry1, 0);
+    addElement(list, registry1);
     showList(list);
     registry1.key = 7;
-    addElement(list, registry1, 1);
+    addElement(list, registry1);
+    showList(list);
+    registry1.key = 6;
+    addElement(list, registry1);
     showList(list);
     printf("length: %i \n", length(list));
     deleteElement(5,list);
